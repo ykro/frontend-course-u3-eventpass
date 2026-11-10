@@ -1,4 +1,4 @@
-// Reto autónomo, tests públicos. La nota también incluye tests ocultos con más bordes.
+// Reto autónomo, tests públicos. Son una muestra: el contrato completo tiene más bordes.
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import EventsPage from "@/app/events/page";

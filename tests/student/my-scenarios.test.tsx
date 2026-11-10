@@ -5,7 +5,7 @@
 // test público no suma.
 //
 // Puedes importar desde "@/..." y los ayudantes de "../helpers" (makeEvent, formDataOf,
-// fakeRepository, deferred). No leas archivos ni uses la red: el calificador lo rechaza.
+// fakeRepository, deferred). No leas archivos ni uses la red: los tests deben ser herméticos.
 
 test("mi escenario 1: una regla de cupo o de correo que la suite pública no cubre", () => {
   expect.fail("Escribe un escenario del reto que detecte un error plausible.");
