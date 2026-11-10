@@ -1,6 +1,6 @@
 # DEPLOYMENT.md
 
-Completa esta ficha después de desplegar en Vercel (ver la guía de despliegue en el material de la unidad). El calificador lee la primera línea que empieza con `URL:` y solo acepta el dominio de producción del proyecto (`https://<proyecto>.vercel.app`), no la URL de un despliegue concreto ni la de una vista previa. Después llama a `GET <URL>/api/health`: `owner` debe ser tu repositorio y `commit` un commit que exista en el repositorio que entregas.
+Completa esta ficha después de desplegar en Vercel (ver la guía de despliegue en el material de la unidad). La línea de `URL` de abajo lleva el dominio de producción del proyecto (`https://<proyecto>.vercel.app`), no la URL de un despliegue concreto ni la de una vista previa. En `GET <URL>/api/health`, `owner` debe ser tu repositorio y `commit` un commit que exista en tu repositorio.
 
 URL: https://...
 

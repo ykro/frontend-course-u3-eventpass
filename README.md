@@ -45,7 +45,7 @@ Estado inicial de `npm test`: `tests/demo.test.ts` en verde (4: salud del despli
 
 ## Reto autónomo: inscripción confiable, optimista y filtros compartibles
 
-Al terminar el taller la inscripción funciona, pero vende de más, acepta correos repetidos y el catálogo no se puede filtrar. El reto tiene tres partes. El contrato es exacto: los tests públicos y los ocultos lo verifican al pie de la letra.
+Al terminar el taller la inscripción funciona, pero vende de más, acepta correos repetidos y el catálogo no se puede filtrar. El reto tiene tres partes. El contrato es exacto: cúmplelo al pie de la letra, no solo en lo que revisan los tests públicos.
 
 ### Parte A. Reglas de cupo en el servidor (`InMemoryEventsRepository.reserveSeat`)
 
@@ -80,34 +80,17 @@ Reto de 2 a 3 horas, más unos 45 minutos de tests propios y 45 minutos de docum
 
 ## Rúbrica (100 puntos)
 
-| Componente           | Puntos | Cómo se mide                                                                                                                                                                          |
-| :------------------- | -----: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Taller guiado        |     20 | `tests/workshop.test.tsx`, proporcional                                                                                                                                               |
-| Reto, tests públicos |     10 | `tests/challenge.test.tsx`, proporcional                                                                                                                                              |
-| Reto, tests ocultos  |     25 | tests ocultos con más bordes y datos distintos, proporcional                                                                                                                          |
-| Tests propios        |     10 | pasan contra la referencia y detectan mutantes que la suite pública no detecta; los errores sembrados se agrupan por concepto: 2 conceptos distintos detectados = completo, 1 = mitad |
-| Despliegue (Vercel)  |     10 | `DEPLOYMENT.md` con la URL de producción; `GET /api/health` responde 200 con `"owner"` igual a tu repositorio y `"commit"` igual a un commit de tu repositorio                        |
-| ADR y checklist      |     15 | revisión manual: ADR 10, checklist `SECURITY_AND_QUALITY.md` 2, sección propia de `AGENTS.md` 2 y declaración de uso de IA 1                                                          |
-| Calidad e integridad |     10 | `typecheck`, `lint` y `format:check` limpios (5) + sin sospechas de integridad (5)                                                                                                    |
+| Componente              | Puntos | Cómo se mide                                                                                                                                                                          |
+| :---------------------- | -----: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Taller guiado           |     20 | `tests/workshop.test.tsx`, proporcional                                                                                                                                               |
+| Reto, tests públicos    |     10 | `tests/challenge.test.tsx`, proporcional                                                                                                                                              |
+| Reto, contrato completo |     25 | los casos del contrato que los tests públicos no cubren, con más bordes y datos distintos, proporcional                                                                               |
+| Tests propios           |     10 | pasan contra la referencia y detectan mutantes que la suite pública no detecta; los errores sembrados se agrupan por concepto: 2 conceptos distintos detectados = completo, 1 = mitad |
+| Despliegue (Vercel)     |     10 | `DEPLOYMENT.md` con la URL de producción; `GET /api/health` responde 200 con `"owner"` igual a tu repositorio y `"commit"` igual a un commit de tu repositorio                        |
+| ADR y checklist         |     15 | revisión manual: ADR 10, checklist `SECURITY_AND_QUALITY.md` 2, sección propia de `AGENTS.md` 2 y declaración de uso de IA 1                                                          |
+| Calidad e integridad    |     10 | `typecheck`, `lint` y `format:check` limpios (5) + sin sospechas de integridad (5)                                                                                                    |
 
-La CI de GitHub es retroalimentación, no la nota. El calificador del curso trabaja sobre una copia limpia: los tests oficiales, `tests/setup.ts`, `tests/helpers.ts`, `package.json`, `package-lock.json` y la configuración salen de su copia, y además corre tests ocultos. Modificar tests oficiales o workflows, que el código de `src/` lea archivos, ejecute procesos, use `eval` o importe módulos dinámicamente, o consulte si está corriendo en una prueba, se reporta como sospecha de integridad.
-
-<!-- texto-escaner:inicio (generado por scripts/texto_escaner.py; no editar a mano) -->
-
-### Qué marca el escáner del calificador
-
-El calificador revisa tu código y tus tests antes de correrlos. Si encuentra algo de esta lista, tu nota queda **retenida** hasta que el docente la revise: no pierdes puntos automáticamente, pero tampoco se publica. Nada de esto hace falta para resolver los retos.
-
-**Por qué existe.** Tus tests corren en la misma máquina que los tests ocultos. Lo que se marca es lo que permitiría leer esos tests, cambiar el resultado de las pruebas o salir a internet desde el calificador.
-
-**En este proyecto (TypeScript).**
-
-- Se marca: importar módulos de Node con acceso al sistema (`fs`, `child_process`, `os`, `net`, `http`, `vm`, `worker_threads`…; sí puedes `crypto`, `path`, `url`, `util`, `events`, `buffer`, `assert`, `timers`); `import()` o `require()` con un nombre calculado; `eval` y `Function()`; `process.argv`, `process.exit`, `process.binding`, `process.env[nombre calculado]`; `globalThis`, `window` o `process` indexados con un nombre calculado; `__proto__` y `constructor.constructor`; en `src/`, mencionar el runner (`vitest`, `junit`, `AWA_`, `afterAll(`), también armado por partes; en tests, `process.cwd`, `__dirname`, `import.meta.url`.
-- Sí puedes unir textos (`"btn " + "primary"`), usar rutas como `/sitemap.xml` y `window["dataLayer"]`.
-
-**En todos los proyectos** se marca además: modificar o borrar archivos oficiales, agregar archivos fuera de tus carpetas, enlaces simbólicos, y archivos como `sitecustomize.py`, `pytest.ini`, `init.gradle` o `.npmrc`. Y tus tests deben dar siempre el mismo resultado: un test que falla al azar no cuenta.
-
-<!-- texto-escaner:fin -->
+La CI de GitHub es retroalimentación: corre los tests oficiales, no todo el contrato. Modificar tests oficiales o workflows, que el código de `src/` lea archivos, ejecute procesos, use `eval` o importe módulos dinámicamente, o consulte si está corriendo en una prueba, se reporta como sospecha de integridad.
 
 ## Rutas
 
