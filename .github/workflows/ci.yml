@@ -48,6 +48,6 @@ jobs:
             echo "### Resultado de la CI"
             echo ""
             echo "Este resultado es retroalimentación sobre tu trabajo. Los tests públicos del reto"
-            echo "son una muestra: el contrato completo del README tiene más casos borde y otros datos."
+            echo "son una muestra: el contrato completo de la guía del reto tiene más casos borde y otros datos."
             echo "Revisa también tu despliegue en Vercel y no modifiques los tests oficiales ni los workflows."
           } >> "$GITHUB_STEP_SUMMARY"

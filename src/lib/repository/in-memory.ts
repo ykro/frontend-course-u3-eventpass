@@ -30,7 +30,7 @@ export class InMemoryEventsRepository implements EventsRepository {
 
   async reserveSeat(eventId: string, attendee: Attendee): Promise<ReserveResult> {
     // RETO: hoy aparta el lugar sin verificar nada: vende de más y acepta correos repetidos.
-    // Implementa las reglas del README (NOT_FOUND, ALREADY_REGISTERED, SOLD_OUT) de forma atómica.
+    // Implementa las reglas de la guía del reto (NOT_FOUND, ALREADY_REGISTERED, SOLD_OUT) de forma atómica.
     const stored = this.events.get(eventId);
     if (!stored) throw new Error("Pendiente (reto): responde NOT_FOUND.");
     stored.attendees.push({ name: attendee.name, email: attendee.email });

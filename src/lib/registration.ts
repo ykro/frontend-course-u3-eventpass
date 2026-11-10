@@ -18,7 +18,7 @@ export const REGISTER_ERROR_MESSAGES = {
   ALREADY_REGISTERED: "Ese correo ya está inscrito en este evento.",
 } as const;
 
-/** RETO: traduce el rechazo del repositorio al estado exacto que pide el README. */
+/** RETO: traduce el rechazo del repositorio al estado exacto que pide la guía del reto. */
 export function rejectionToState(
   reason: Extract<ReserveResult, { ok: false }>["reason"],
 ): RegisterState {
