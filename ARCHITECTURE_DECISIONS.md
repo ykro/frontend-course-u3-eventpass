@@ -1,6 +1,6 @@
 # ARCHITECTURE_DECISIONS.md (Unidad 3)
 
-Responde cada pregunta con tus palabras, en 3 a 8 líneas, citando archivos o funciones de tu código. Se califica con criterio técnico, no con extensión. Este documento vale 15 puntos: el ADR (ADR-1 a ADR-5) 10, el checklist `SECURITY_AND_QUALITY.md` 2, tu sección de `AGENTS.md` junto con el ADR-6 2 y la declaración de uso de IA 1.
+Responde cada pregunta con tus palabras, en 3 a 8 líneas, citando archivos o funciones de tu código. Importa el criterio técnico, no la extensión.
 
 ## ADR-1: Qué componentes llevan 'use client' y cuáles no
 
